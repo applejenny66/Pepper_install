@@ -62,6 +62,7 @@ echo "${GREEN}[OK]finished installing vscode${NC}"
 sudo pip3 install -r requirements.txt
 sudo pip install -r requirements.txt
 
+echo "${PURPLE}start to install ROS kinetic for Ubuntu 16.04${NC}"
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
 sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
 sudo apt-get update
@@ -75,22 +76,27 @@ sudo apt install python-rosdep
 sudo rosdep init
 rosdep update
 
-
+echo "${PURPLE}start to install ROS pepper${NC}"
 sudo apt-get install ros-kinetic-driver-base ros-kinetic-move-base-msgs ros-kinetic-octomap ros-kinetic-octomap-msgs ros-kinetic-humanoid-msgs ros-kinetic-humanoid-nav-msgs ros-kinetic-camera-info-manager ros-kinetic-camera-info-manager-py
 sudo apt-get install ros-kinetic-pepper-.*
 
+echo "${GREEN}build catkin_ws${NC}"
 mkdir -p ~/catkin_ws/src
 cd ~/catkin_ws/src
+
+echo "${GREEN}clone naoqi_driver${NC}"
 git clone https://github.com/ros-naoqi/naoqi_driver.git
 rosdep install -i -y --from-paths ./naoqi_driver
 
 source /opt/ros/kinetic/setup.sh
 cd ../ && catkin_make
 
-
+echo "${PURPLE}start to install darknet${NC}"
 git clone https://github.com/pjreddie/darknet
 cd darknet
 make
+
+echo "${GREEN}start to download yolov3.weights${NC}"
 wget https://pjreddie.com/media/files/yolov3.weights
 ./darknet detect cfg/yolov3.cfg yolov3.weights data/dog.jpg
 wget https://pjreddie.com/media/files/yolov3-tiny.weights
@@ -101,6 +107,7 @@ wget https://pjreddie.com/media/files/yolov3-tiny.weights
 # video
 # ./darknet detector demo cfg/coco.data cfg/yolov3.cfg yolov3.weights <video file>
 
+echo "${PURPLE}start to install opencv${NC}"
 sudo apt-get install python-opencv
 
 if [ -f "/home/applejenny66/jenny/PepperSDK_2.5.5/Linux/pynaoqi-python2.7-2.5.5.5-linux64.tar.gz" ]; then
@@ -110,3 +117,4 @@ else
 fi
 
 export PYTHONPATH=${PYTHONPATH}:/home/applejenny66/jenny/PepperSDK_2.5.5/Linux/pynaoqi-python2.7-2.5.5.5-linux64/lib/python2.7/site-packages
+echo "${GREEN}finished building the system${NC}"
