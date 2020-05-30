@@ -1,0 +1,9 @@
+numpy
+matplotlib
+scipy
+pandas
+beautifulsoup4
+textblob
+nltk
+gensim
+Pattern
