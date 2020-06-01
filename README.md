@@ -58,7 +58,7 @@ Moreover, you should be able to run rviz in the terminal to see your robot by ru
 you can develop your robot Pepper now!
 
 ### Future
->I will keep updating the code if there's any problem and make it more flexible and convenient for people.
+I will keep updating the code if there's any problem and make it more flexible and convenient for people.
 
 ----
 ## Changelog
