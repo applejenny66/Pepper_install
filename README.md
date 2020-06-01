@@ -46,11 +46,11 @@ Moreover, you should be able to run rviz in the terminal to see your robot by ru
 3. Install and build virtualenv for python
 4. Install [visual studio code](https://packages.microsoft.com/repos/vscode)
 5. Install requirements.txt
-6. Install [ROS - kinetic] (http://wiki.ros.org/kinetic/Installation/Ubuntu)
+6. Install [ROS - kinetic](http://wiki.ros.org/kinetic/Installation/Ubuntu)
 7. Install [ROS pepper-driver](http://wiki.ros.org/pepper/Tutorial_kinetic)
-8. clone [naoqi-driver] (https://github.com/ros-naoqi/naoqi_driver.git)
-9. clone [darknet] (https://github.com/pjreddie/darknet)
-10. Download [yolov3] (https://pjreddie.com/darknet/yolo/)
+8. clone [naoqi-driver](https://github.com/ros-naoqi/naoqi_driver.git)
+9. clone [darknet](https://github.com/pjreddie/darknet)
+10. Download [yolov3](https://pjreddie.com/darknet/yolo/)
 11. Install opencv
 12. Check for having the "pynaoqi-python2.7-2.5.5.5-linux64" or not
 
